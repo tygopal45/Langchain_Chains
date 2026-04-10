@@ -12,3 +12,6 @@ transformers<4.46.0
 pydantic
 
 python-dotenv
+
+# to draw graph of chain pipelines
+grandalf
