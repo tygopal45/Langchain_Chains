@@ -15,16 +15,15 @@ prompt2 = PromptTemplate(
     input_variables=["report"]
 )
 
-model = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
+model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
 parser = StrOutputParser()
 
 chain = prompt1 | model | parser | prompt2 | model | parser
 
-chain.get_graph().print_ascii()
-
 result = chain.invoke({"topic": "Harry Potter"})
 
 print(result)
 
+chain.get_graph().print_ascii()
 
